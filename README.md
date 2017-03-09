@@ -43,7 +43,7 @@ I will be working with delay information from the <u>top 20 busiest US airports<
 
 The output of the project will be a website containing a map with the status of the airports and historical information.
 
-[Map]: /images/map.png "US Map"
+<img src='images/map.png'>
 
 Each dot will be:
 + green: if there are no delays

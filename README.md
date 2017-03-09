@@ -39,7 +39,7 @@ I will be working with delay information from the <u>top 20 busiest US airports<
 
 ## Objective
 
-[architecture]: /images/architecture.png "Data Pipeline"
+[architecture]: /images/revised_architecture.png "Data Pipeline"
 
 The objective of the project is to collect historical information about airport delays and present two views of the data:
 + real time map with delays,

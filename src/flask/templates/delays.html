@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% import 'macros.html' as macros %}
+{% block content %}
+
+
+
+      <div align="center">
+        <h2>Delays recorded in DBs:</h2>
+      </div>
+
+<hr>
+<div class="col-md-4">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+         <th>Airport</th>
+         <th>Date</th>
+         <th>Delays</th>
+      </tr>
+     </thead>
+{% for z in results %}
+    <tr>
+      <td>{{z.iata}}</td>
+      <td>{{z.date}}</td>
+      <td>  {% if z.delay == 0 %}
+        False
+         {% else %}
+         True
+{% endif %}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+</table>
+
+
+<hr>
+
+<div align="center"
+    <p><a href="/"><button type="submit" class="btn btn-primary">Return home</button></p></a>
+</div>
+
+
+{% endblock %}

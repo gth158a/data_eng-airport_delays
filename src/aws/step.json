@@ -1,0 +1,13 @@
+// File is not run independently but it is called from cluster.sh
+[
+  {
+    "Name": "Delays Aggregation",
+    "Type":"Spark",
+    "Args":
+    [
+      "--deploy-mode", "client",
+      "--conf", "spark.yarn.submit.waitAppCompletion=true",
+      "/hadoop/pyjob3.py"],
+    "ActionOnFailure": "TERMINATE_CLUSTER"
+  }
+]

@@ -50,10 +50,10 @@ The content of the project is broken down in the following sections:
 
 + [Data Stream](/notebooks/Data_Stream.ipynb)
 : A way to continuously query data from a website or API (at least one, but preferably two sources of data)
-+ Storage: Storage for all unstructured data in its entirety
-+ Structured Data: Separate storage for structured data in 3NF (similar to how we stored raw tweets in s3 and structured tables in postgres)
-+ Data Transformations: Some sort of batch process/transformation with Spark
-+ Front-end: A way to communicate the results of your pipeline such as a static website or flask app
++ [Storage] (/notebooks/Storage.ipynb): Storage for all unstructured data in its entirety
++ [Structured Data] (/notebooks/Storage.ipynb): Separate storage for structured data in 3NF (similar to how we stored raw tweets in s3 and structured tables in postgres)
++ [Data Transformations] (/notebooks/Data_Transformation.ipynb): Some sort of batch process/transformation with Spark
++ [Front-end] (/notebooks/Data_Transformation.ipynb): A way to communicate the results of your pipeline such as a static website or flask app
 
 ## 8 Desired properties of a big data system
 

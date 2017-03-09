@@ -48,12 +48,12 @@ The objective of the project is to collect historical information about airport 
 ## Project Structure:
 The content of the project is broken down in the following sections:
 
-+ [Data Stream](/notebooks/Data_Stream.ipynb)
++ [Data Stream](https://github.com/gth158a/data_eng-airport_delays/blob/master/notebooks/Data_Stream.ipynb)
 : A way to continuously query data from a website or API (at least one, but preferably two sources of data)
-+ [Storage] (/notebooks/Storage.ipynb): Storage for all unstructured data in its entirety
-+ [Structured Data] (/notebooks/Storage.ipynb): Separate storage for structured data in 3NF (similar to how we stored raw tweets in s3 and structured tables in postgres)
-+ [Data Transformations] (/notebooks/Data_Transformation.ipynb): Some sort of batch process/transformation with Spark
-+ [Front-end] (/notebooks/Data_Transformation.ipynb): A way to communicate the results of your pipeline such as a static website or flask app
++ [Storage] (https://github.com/gth158a/data_eng-airport_delays/blob/master/notebooks/Storage.ipynb): Storage for all unstructured data in its entirety
++ [Structured Data] (https://github.com/gth158a/data_eng-airport_delays/blob/master/notebooks/Storage.ipynb): Separate storage for structured data in 3NF (similar to how we stored raw tweets in s3 and structured tables in postgres)
++ [Data Transformations] (https://github.com/gth158a/data_eng-airport_delays/blob/master/notebooks/Data_Transformations.ipynb): Some sort of batch process/transformation with Spark
++ [Front-end] (https://github.com/gth158a/data_eng-airport_delays/blob/master/notebooks/Data_Transformations.ipynb): A way to communicate the results of your pipeline such as a static website or flask app
 
 ## 8 Desired properties of a big data system
 

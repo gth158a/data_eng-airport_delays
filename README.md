@@ -48,7 +48,8 @@ The objective of the project is to collect historical information about airport 
 ## Project Structure:
 The content of the project is broken down in the following sections:
 
-+ Data Stream: A way to continuously query data from a website or API (at least one, but preferably two sources of data)
++ [Data Stream](/notebooks/Data_Stream.ipynb)
+: A way to continuously query data from a website or API (at least one, but preferably two sources of data)
 + Storage: Storage for all unstructured data in its entirety
 + Structured Data: Separate storage for structured data in 3NF (similar to how we stored raw tweets in s3 and structured tables in postgres)
 + Data Transformations: Some sort of batch process/transformation with Spark
@@ -65,12 +66,4 @@ The content of the project is broken down in the following sections:
 | **Extensibility** | Yes. The initial idea is to have dealy and weather data but adding news and tweets relevant to the airport city is possible.|  |
 | **Ad hoc queries**| Yes. I will use PySpark to query PostgreSQL database for aggregation charts and Streaming but real-time updates | A predictive model could be used to predict the delay outlook for each of the airports.|
 | **Minimal maintenance** | Yes. In the case that the predictive models are deployed, then most of the maintenance will revolve around updating training on a daily basis which could be scripted and scheduled with airflow. | |
-| **Debuggability** | Yes. Errors during data collection are stored independently for further analysis. | I have not Implemented a tool to keep the pulse of each of the components. Nonetheless, Amazon's Cloudwatch seems to help monitoring status and logging issues. | 
-ach dot will be:
-+ green: if there are no delays
-+ red: if delays have been reported
-The user can click on the airport and see:
-Stage 1: additional details about the delay.
-Stage 2: twitter feed of the airport in question.
-Stage 3: Historical information on delays on the airport (average delay for the past two weeks and a chart that shows a day log of delays for the past 2 weeks.
-Stage 4: Using the historical information and forecasted weather, predict if there will be a delay.
+| **Debuggability** | Yes. Errors during data collection are stored independently for further analysis. | I have not Implemented a tool to keep the pulse of each of the components. Nonetheless, Amazon's Cloudwatch seems to help monitoring status and logging issues. |

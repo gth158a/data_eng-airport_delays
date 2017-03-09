@@ -41,11 +41,32 @@ I will be working with delay information from the <u>top 20 busiest US airports<
 
 [architecture]: /images/architecture.png "Data Pipeline"
 
-The output of the project will be a website containing a map with the status of the airports and historical information.
+The objective of the project is to collect historical information about airport delays and present two views of the data:
++ real time map with delays,
++ and a link from each airport to their historical information
 
-<img src='images/map.png'>
+## Project Structure:
+The content of the project is broken down in the following sections:
 
-Each dot will be:
++ Data Stream: A way to continuously query data from a website or API (at least one, but preferably two sources of data)
++ Storage: Storage for all unstructured data in its entirety
++ Structured Data: Separate storage for structured data in 3NF (similar to how we stored raw tweets in s3 and structured tables in postgres)
++ Data Transformations: Some sort of batch process/transformation with Spark
++ Front-end: A way to communicate the results of your pipeline such as a static website or flask app
+
+## 8 Desired properties of a big data system
+
+| Property | System have it? | How could it be improved |
+|:---------|-----------------|-------------------------:|
+|**Robustness and fault tolerance** |Data is captured from FAA site with EC2 instance. The requirements for the streaming machine are listed in reequirements.txt and the python script querying the source is in the same repo. If the number of records in S3 is less than 4 email is sent. | This property can be improved with the use of amazon's cloudwatch service by monitoring the status of the EC2 instances and automating deployment of second instance if one fails.|
+|**Low latency reads and updates**| Yes. Using lambda architecture. Hourly batch jobs will be scheduled and the readings for the current hour will be processed with spark Streaming. | Reducing the window for streaming from 1 hour to 30 minutes. |
+|**Scalability **| Yes. The system currently collects data for 20 airports but the pipeline could expand horizontally by the addition of airports without too much hesitation. | This can be improved by having ec2 instances for distinct geographic areas. |
+| **Generalization**| Yes. The system is general enough that could be used for a different purpose and each of the pieces could be upgraded at any time. | |
+| **Extensibility** | Yes. The initial idea is to have dealy and weather data but adding news and tweets relevant to the airport city is possible.|  |
+| **Ad hoc queries**| Yes. I will use PySpark to query PostgreSQL database for aggregation charts and Streaming but real-time updates | A predictive model could be used to predict the delay outlook for each of the airports.|
+| **Minimal maintenance** | Yes. In the case that the predictive models are deployed, then most of the maintenance will revolve around updating training on a daily basis which could be scripted and scheduled with airflow. | |
+| **Debuggability** | Yes. Errors during data collection are stored independently for further analysis. | I have not Implemented a tool to keep the pulse of each of the components. Nonetheless, Amazon's Cloudwatch seems to help monitoring status and logging issues. | 
+ach dot will be:
 + green: if there are no delays
 + red: if delays have been reported
 The user can click on the airport and see:

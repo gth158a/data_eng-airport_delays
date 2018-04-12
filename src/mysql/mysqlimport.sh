@@ -1,1 +1,0 @@
-mysqlimport --local     --compress     --user=flask     --password flasktest     --host=flasktest.czmfd7dvqdgw.us-east-1.rds.amazonaws.com     --port=3306     --columns=date,time,iata,delay,reason,temp,visibility,weather,wind,credit,updated,url     --fields-terminated-by=',' weather_delay2.csv
